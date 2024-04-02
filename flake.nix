@@ -62,6 +62,12 @@
         nixvim.homeManagerModules.nixvim
       ];
     };
+    homeManagerConfLxc = {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users."${username}" = import ./systems/nixos-lxc/home.nix;
+      home-manager.extraSpecialArgs = {inherit pkgs username;};
+    };
   in {
     nixosConfigurations = {
       nixos-x1 = nixpkgs.lib.nixosSystem {
@@ -90,6 +96,18 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.home-manager
           homeManagerConf
+        ];
+      };
+      nixos-lxc = nixpkgs.lib.nixosSystem {
+        system = system;
+        specialArgs = {
+          inherit username ssh-keys;
+          hostname = "nixos-lxc";
+        };
+        modules = [
+          ./systems/nixos-lxc/configuration.nix
+          home-manager.nixosModules.home-manager
+          homeManagerConfLxc
         ];
       };
     };

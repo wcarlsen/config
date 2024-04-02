@@ -5,5 +5,6 @@
     ./cachix.nix
     ./config.nix
     ./summary.nix
+    ./auto-upgrade.nix
   ];
 }
