@@ -10,9 +10,5 @@
     ./../../modules/nixos/virtualization/docker.nix
   ];
 
-  environment.systemPackages = [
-    pkgs.vim
-  ];
-
   system.stateVersion = "23.11"; # Did you read the comment?s
 }
