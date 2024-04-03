@@ -21,7 +21,7 @@
           # "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
           "80:80/tcp"
         ];
-        environments = {
+        environment = {
           TZ = "Europe/Copenhagen";
         };
         volumes = [
