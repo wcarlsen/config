@@ -8,5 +8,6 @@
     ./python.nix
     ./yaml.nix
     ./cue.nix
+    ./javascript.nix
   ];
 }

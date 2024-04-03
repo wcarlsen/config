@@ -24,6 +24,8 @@
       hlsearch = true;
       ignorecase = true;
       smartcase = true;
+      wrap = true;
+      linebreak = true;
     };
     keymaps = [
       {
