@@ -26,6 +26,7 @@
       smartcase = true;
       wrap = true;
       linebreak = true;
+      swapfile = false;
     };
     keymaps = [
       {
