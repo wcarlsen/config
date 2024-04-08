@@ -152,7 +152,6 @@ Show available shortcuts.
     (which-key-mode))
 #+end_src
 
-
 * Org
 
 ** Org-bullets
