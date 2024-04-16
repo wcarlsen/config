@@ -9,7 +9,7 @@
       clickItemTo = "select";
       theme = "breeze-dark";
       colorScheme = "BreezeDark";
-      wallpaper = ./background.png;
+      wallpaper = ./backgrounds/harske-hubbi.jpg;
     };
   };
 }
