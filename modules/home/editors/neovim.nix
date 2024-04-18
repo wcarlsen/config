@@ -81,6 +81,7 @@
             "gi" = "implementation";
             "gf" = "format";
             "K" = "hover";
+            "<leader>rn" = "rename";
           };
         };
         servers = {
