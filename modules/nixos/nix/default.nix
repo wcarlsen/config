@@ -6,7 +6,7 @@
     ./config.nix
     ./summary.nix
     ./auto-upgrade.nix
-    # ./gc.nix
-    ./nh.nix
+    ./gc.nix
+    # ./nh.nix # only in unstable
   ];
 }
