@@ -6,6 +6,7 @@
     ./config.nix
     ./summary.nix
     ./auto-upgrade.nix
-    ./gc.nix
+    # ./gc.nix
+    ./nh.nix
   ];
 }
