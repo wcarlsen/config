@@ -6,6 +6,5 @@
     bitwarden
     mpv
     github-desktop
-    playonlinux
   ];
 }

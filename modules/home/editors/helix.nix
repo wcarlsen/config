@@ -24,15 +24,6 @@
       ];
       keys.normal."C-f" = [":new" ":insert-output TEMP=$(mktemp); lf -selection-path=$TEMP; cat $TEMP" "select_all" "split_selection_on_newline" "goto_file" "goto_last_modified_file" ":buffer-close!" ":redraw"];
     };
-    # languages = {
-    #   language = [{
-    #     name = "go";
-    #     indent = {
-    #       tab-width = 4;
-    #       unit = "\t";
-    #     };
-    #   }];
-    # }; 
   };
 
   programs.lf.enable = true;
