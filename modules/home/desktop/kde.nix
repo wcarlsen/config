@@ -9,7 +9,7 @@
       clickItemTo = "select";
       theme = "breeze-dark";
       colorScheme = "BreezeDark";
-      wallpaper = ./backgrounds/harske-hubbi.jpg;
+      wallpaper = ./backgrounds/hannah-montana-linux.png;
     };
   };
 }
