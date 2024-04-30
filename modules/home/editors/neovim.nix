@@ -22,6 +22,7 @@
       wrap = true;
       linebreak = true;
       swapfile = false;
+      guifont = "FantasqueSansM Nerd Font:h12";
     };
     keymaps = [
       {
@@ -42,6 +43,7 @@
         enable = true;
         extensions = {
           fzf-native.enable = true;
+          # project-nvim.enable = true;
         };
         keymaps = {
           "<leader>ff" = "find_files";
@@ -136,5 +138,7 @@
       then [ripgrep]
       else []
     )
-    ++ [];
+    ++ [
+      neovide
+    ];
 }

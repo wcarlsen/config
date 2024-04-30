@@ -249,10 +249,13 @@ Complex file explorer.
   (use-package treemacs
     :config
     (setq treemacs-position 'right)
-    (setq treemacs-project-follow-mode t)
-    (treemacs-git-mode 'deferred))
+    (setq treemacs-project-follow-mode t))
 
-  (use-package treemacs-projectile)
+  (use-package treemacs-projectile
+    :after (treemacs projectile))
+
+  (use-package treemacs-magit
+      :after (treemacs projectile))
 #+end_src
 
 * Terminal
@@ -287,10 +290,16 @@ Disable ring bell (also visual indicator).
 ** Smartparens
 Auto pair parens.
 #+begin_src emacs-lisp
-  (use-package smartparens
-    :config
-    (require 'smartparens-config)
-    (smartparens-global-mode))
+  ;; (use-package smartparens
+  ;;   :config
+  ;;   (require 'smartparens-config)
+  ;;   (smartparens-global-mode))
+#+end_src
+
+** Electric-pair
+Enable electric-pair for auto pairing.
+#+begin_src emacs-lisp
+  (electric-pair-mode)
 #+end_src
 
 ** Backup files
