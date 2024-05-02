@@ -290,16 +290,10 @@ Disable ring bell (also visual indicator).
 ** Smartparens
 Auto pair parens.
 #+begin_src emacs-lisp
-  ;; (use-package smartparens
-  ;;   :config
-  ;;   (require 'smartparens-config)
-  ;;   (smartparens-global-mode))
-#+end_src
-
-** Electric-pair
-Enable electric-pair for auto pairing.
-#+begin_src emacs-lisp
-  (electric-pair-mode)
+  (use-package smartparens
+    :config
+    (require 'smartparens-config)
+    (smartparens-global-mode))
 #+end_src
 
 ** Backup files
