@@ -3,7 +3,7 @@
     ./helix.nix
     ./vscode.nix
     ./emacs
-    ./neovim.nix
+    # ./neovim.nix
   ];
 
   home.sessionVariables = {

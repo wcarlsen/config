@@ -2,7 +2,8 @@
   pkgs,
   # catppuccin-k9s,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     kubectl
     kubernetes-helm
@@ -13,7 +14,6 @@
     kubent
     kubie
     cmctl
-    nodePackages.yaml-language-server
     weave-gitops
     eks-node-viewer
   ];

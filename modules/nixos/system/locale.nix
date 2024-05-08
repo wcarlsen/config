@@ -17,10 +17,10 @@ in {
   };
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "dk";
-    xkbVariant = "";
-    xkbOptions = "caps:ctrl_modifier";
+    variant = "";
+    options = "caps:ctrl_modifier";
   };
 
   # Configure console keymap

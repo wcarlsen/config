@@ -33,7 +33,7 @@
       enable = true;
       enableSSHSupport = true;
       enableExtraSocket = true;
-      pinentryFlavor = "qt";
+      pinentryPackage = pkgs.pinentry-qt;
     };
   };
 

@@ -9,7 +9,7 @@
       bierner.markdown-mermaid
       catppuccin.catppuccin-vsc
       github.vscode-github-actions
-      ms-vscode-remote.remote-ssh
+      # ms-vscode-remote.remote-ssh
       # streetsidesoftware.code-spell-checker
     ];
     userSettings = {

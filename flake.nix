@@ -8,17 +8,17 @@
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     # Manage home
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Plasma-manager
     plasma-manager.url = "github:pjones/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     plasma-manager.inputs.home-manager.follows = "home-manager";
 
     # Nixvim
-    nixvim.url = "github:nix-community/nixvim/nixos-23.11";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Emacs-overlay
     emacs-overlay.url = "github:nix-community/emacs-overlay";
@@ -48,7 +48,7 @@
   }: let
     username = "wcarlsen";
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
+    pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
       overlays = [(import emacs-overlay)];
@@ -64,7 +64,7 @@
     };
   in {
     nixosConfigurations = {
-      nixos-x1 = nixpkgs.lib.nixosSystem {
+      nixos-x1 = nixpkgs-unstable.lib.nixosSystem {
         system = system;
         specialArgs = {
           inherit username ssh-keys;
@@ -78,7 +78,7 @@
           homeManagerConf
         ];
       };
-      nixos-surface = nixpkgs.lib.nixosSystem {
+      nixos-surface = nixpkgs-unstable.lib.nixosSystem {
         system = system;
         specialArgs = {
           inherit username ssh-keys;
