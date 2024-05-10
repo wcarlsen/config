@@ -7,7 +7,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
     VISUAL_EDITOR = "codium";
   };
 }
