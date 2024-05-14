@@ -31,6 +31,10 @@
     # Gpg config
     gpg-conf.url = "github:drduh/config";
     gpg-conf.flake = false;
+
+    # Catppuccin for k9s
+    k9s-catppuccin.url = "github:catppuccin/k9s";
+    k9s-catppuccin.flake = false;
   };
 
   outputs = inputs @ {
@@ -44,6 +48,7 @@
     org-babel,
     ssh-keys,
     gpg-conf,
+    k9s-catppuccin,
     ...
   }: let
     username = "wcarlsen";
@@ -57,7 +62,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs username plasma-manager nixvim org-babel gpg-conf;};
+      home-manager.extraSpecialArgs = {inherit pkgs username plasma-manager nixvim org-babel gpg-conf k9s-catppuccin;};
       home-manager.sharedModules = [
         nixvim.homeManagerModules.nixvim
       ];

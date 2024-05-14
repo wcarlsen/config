@@ -1,6 +1,6 @@
 {
   pkgs,
-  # catppuccin-k9s,
+  k9s-catppuccin,
   ...
 }:
 {
@@ -41,5 +41,10 @@
   # K9s
   programs.k9s = {
     enable = true;
+    settings = {
+      k9s.ui.skin = "catppuccin-mocha";
+    };
   };
+
+  xdg.configFile."k9s/skins/catppuccin-mocha.yaml".source = "${k9s-catppuccin}/dist/catppuccin-mocha.yaml";
 }
