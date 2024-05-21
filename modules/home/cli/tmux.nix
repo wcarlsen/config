@@ -24,6 +24,10 @@
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
+      # Jump to prompts
+      bind -T copy-mode n send-keys -X next-prompt -o
+      bind -T copy-mode p send-keys -X previous-prompt -o
+
       # Top status bar
       set -g status-position top
     '';

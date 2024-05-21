@@ -300,4 +300,4 @@ Auto pair parens.
 Disable backup files.
 #+begin_src emacs-lisp
   (setq make-backup-files nil)
-#+end_src
+#+end_src  (require 'treesi)
