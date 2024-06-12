@@ -301,3 +301,19 @@ Disable backup files.
 #+begin_src emacs-lisp
   (setq make-backup-files nil)
 #+end_src  (require 'treesi)
+
+** Kubernetes
+Setup Kubel for Kubernetes.
+#+begin_src emacs-lisp
+  (use-package kubel
+    :after (vterm)
+    :config (kubel-vterm-setup))
+#+end_src
+
+** Export environment variables
+Ensure Emacs has same environment as shell.
+#+begin_src emacs-lisp
+  (use-package exec-path-from-shell
+    :config
+    (exec-path-from-shell-initialize))
+#+end_src
