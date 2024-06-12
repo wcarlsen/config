@@ -6,5 +6,6 @@
     bitwarden
     mpv
     github-desktop
+    insomnia
   ];
 }

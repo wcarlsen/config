@@ -24,27 +24,21 @@
       swapfile = false;
       guifont = "FantasqueSansM Nerd Font:h12";
     };
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>ft";
-        options.silent = true;
-        action = "<cmd>Neotree toggle<CR>";
-      }
-    ];
-    extraPlugins = with pkgs.vimPlugins; [
-      vim-sleuth
-      friendly-snippets
-      vim-visual-multi
-    ];
     plugins = {
+      # Visual
       lualine.enable = true;
+      rainbow-delimiters.enable = true;
+      bufferline.enable = true;
+      indent-blankline.enable = true;
+      treesitter.enable = true;
+      noice = {
+        enable = true;
+        notify.enabled = false;
+      };
+
+      # File browsing
       telescope = {
         enable = true;
-        extensions = {
-          fzf-native.enable = true;
-          # project-nvim.enable = true;
-        };
         keymaps = {
           "<leader>ff" = "find_files";
           "<leader>fp" = "git_files";
@@ -57,22 +51,60 @@
         enable = true;
         window.position = "right";
       };
-      treesitter.enable = true;
-      rainbow-delimiters.enable = true;
+      oil.enable = true;
+
+      # Git
+      gitsigns.enable = true;
+      fugitive.enable = true;
+
+      # Lint
       none-ls = {
         enable = true;
         sources = {
-          code_actions = {
-            shellcheck.enable = true;
-          };
+          # code_actions = {
+          #   shellcheck.enable = true;
+          # };
           formatting = {
             alejandra.enable = true;
             black.enable = true;
             isort.enable = true;
             gofmt.enable = true;
+            terraform_fmt.enable = true;
+            yamlfmt.enable = true;
+            shellharden.enable = true;
           };
         };
       };
+
+      # Completion
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        settings = {
+          sources = [
+            {name = "nvim_lsp";}
+            {name = "buffer";}
+            {name = "luasnip";}
+            {name = "path";}
+          ];
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-e>" = "cmp.mapping.close()";
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          };
+          snippet.expand = "luasnip";
+        };
+      };
+
+      # Snippets
+      luasnip = {
+        enable = true;
+        fromVscode = [{}];
+      };
+
+      # Lsp
       lsp = {
         enable = true;
         keymaps = {
@@ -85,6 +117,10 @@
             "K" = "hover";
             "<leader>rn" = "rename";
           };
+          diagnostic = {
+            "<leader>k" = "goto_prev";
+            "<leader>j" = "goto_next";
+          };
         };
         servers = {
           nil_ls.enable = true;
@@ -93,41 +129,15 @@
           bashls.enable = true;
           gopls.enable = true;
           pyright.enable = true;
-          # dagger.enable = true; # cue
         };
       };
-      nvim-cmp = {
-        enable = true;
-        autoEnableSources = true;
-        sources = [
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {name = "path";}
-          {name = "buffer";}
-        ];
-        mapping = {
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.close()";
-          "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-          "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-        };
-        snippet.expand = "luasnip";
-      };
-      luasnip = {
-        enable = true;
-        fromVscode = [{}];
-      };
-      noice = {
-        enable = true;
-      };
-      comment-nvim.enable = true;
-      indent-blankline.enable = true;
-      gitsigns.enable = true;
-      fugitive.enable = true;
-      bufferline.enable = true;
+
+      # Languages
       nix.enable = true;
+
+      # Misc
       floaterm.enable = true;
+      comment-nvim.enable = true;
       nvim-autopairs.enable = true;
     };
   };

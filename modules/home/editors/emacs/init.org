@@ -258,6 +258,12 @@ Complex file explorer.
       :after (treemacs projectile))
 #+end_src
 
+** Dirvish
+Improved dired.
+#+begin_src emacs-lisp
+  (use-package dirvish)
+#+end_src
+
 * Terminal
 Vterm.
 #+begin_src emacs-lisp
@@ -294,21 +300,13 @@ Auto pair parens.
     :config
     (require 'smartparens-config)
     (smartparens-global-mode))
-#+end_src
+    #+end_src
 
 ** Backup files
 Disable backup files.
 #+begin_src emacs-lisp
   (setq make-backup-files nil)
 #+end_src  (require 'treesi)
-
-** Kubernetes
-Setup Kubel for Kubernetes.
-#+begin_src emacs-lisp
-  (use-package kubel
-    :after (vterm)
-    :config (kubel-vterm-setup))
-#+end_src
 
 ** Export environment variables
 Ensure Emacs has same environment as shell.
