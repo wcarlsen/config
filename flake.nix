@@ -83,6 +83,20 @@
           homeManagerConf
         ];
       };
+      nixos-p15v = nixpkgs-unstable.lib.nixosSystem {
+        system = system;
+        specialArgs = {
+          inherit username ssh-keys;
+          hostname = "nixos-p15v";
+        };
+        modules = [
+          ./configuration.nix
+          nixos-hardware.nixosModules.common-pc-laptop
+          # nixos-hardware.nixosModules.lenovo-p50
+          home-manager.nixosModules.home-manager
+          homeManagerConf
+        ];
+      };
       nixos-surface = nixpkgs-unstable.lib.nixosSystem {
         system = system;
         specialArgs = {
