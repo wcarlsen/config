@@ -92,7 +92,7 @@
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
-          # nixos-hardware.nixosModules.lenovo-p50
+          nixos-hardware.nixosModules.lenovo-thinkpad-p50
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];

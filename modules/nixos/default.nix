@@ -8,5 +8,6 @@
     ./users
     ./security
     ./virtualization
+    ./gaming
   ];
 }
