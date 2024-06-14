@@ -6,11 +6,15 @@
     mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
-      bierner.markdown-mermaid
       catppuccin.catppuccin-vsc
       github.vscode-github-actions
-      # ms-vscode-remote.remote-ssh
-      # streetsidesoftware.code-spell-checker
+      golang.go
+      bbenoist.nix
+      jnoortheen.nix-ide
+      hashicorp.terraform
+      ms-python.python
+      asdine.cue
+      timonwong.shellcheck
     ];
     userSettings = {
       security.workspace.trust.enabled = false;

@@ -15,11 +15,4 @@
 
   # Zsh plugin
   programs.zsh.oh-my-zsh.plugins = ["terraform"];
-
-  # Vscode
-  programs.vscode = {
-    extensions = with pkgs.vscode-extensions; [
-      hashicorp.terraform
-    ];
-  };
 }
