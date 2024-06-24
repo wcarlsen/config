@@ -9,5 +9,6 @@
     ./yaml.nix
     ./cue.nix
     ./javascript.nix
+    ./rust.nix
   ];
 }
