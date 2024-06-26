@@ -14,7 +14,6 @@ in {
       alwaysTangle = true;
       config = ./init.org;
       defaultInitFile = false;
-      # extraEmacsPackages = epkgs: ( with epkgs; [ treesit-grammars.with-all-grammars ]);
     })
   ];
 

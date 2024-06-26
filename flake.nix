@@ -21,8 +21,8 @@
     # nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Emacs-overlay
-    # emacs-overlay.url = "github:nix-community/emacs-overlay";
-    # org-babel.url = "github:emacs-twist/org-babel";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    org-babel.url = "github:emacs-twist/org-babel";
 
     # Ssh keys
     ssh-keys.url = "https://github.com/wcarlsen.keys";
@@ -44,8 +44,8 @@
     home-manager,
     plasma-manager,
     # nixvim,
-    # emacs-overlay,
-    # org-babel,
+    emacs-overlay,
+    org-babel,
     ssh-keys,
     gpg-conf,
     k9s-catppuccin,
@@ -56,13 +56,13 @@
     pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      # overlays = [(import emacs-overlay)];
+      overlays = [(import emacs-overlay)];
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs username plasma-manager gpg-conf k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {inherit pkgs username plasma-manager org-babel gpg-conf k9s-catppuccin;};
       home-manager.sharedModules = [
         # nixvim.homeManagerModules.nixvim
       ];
