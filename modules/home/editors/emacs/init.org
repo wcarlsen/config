@@ -142,6 +142,101 @@ Most terminal like emulator.
   (use-package vterm)
 #+end_src
 
+* Completion
+
+** Corfu
+Completion in region function.
+#+begin_src emacs-lisp
+  (use-package corfu
+    ;; Optional customizations
+    :custom
+    ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+    (corfu-auto t)                 ;; Enable auto completion
+    ;; (corfu-separator ?\s)          ;; Orderless field separator
+    ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+    ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+    ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+    ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+    ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+    ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+
+    ;; Enable Corfu only for certain modes.
+    ;; :hook ((prog-mode . corfu-mode)
+    ;;        (shell-mode . corfu-mode)
+    ;;        (eshell-mode . corfu-mode))
+
+    ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
+    ;; be used globally (M-/).  See also the customization variable
+    ;; `global-corfu-modes' to exclude certain modes.
+    :init
+    (global-corfu-mode))
+
+  ;; A few more useful configurations...
+  (use-package emacs
+    :init
+    ;; TAB cycle if there are only few candidates
+    ;; (setq completion-cycle-threshold 3)
+
+    ;; Enable indentation+completion using the TAB key.
+    ;; `completion-at-point' is often bound to M-TAB.
+    (setq tab-always-indent 'complete)
+
+    ;; Emacs 30 and newer: Disable Ispell completion function. As an alternative,
+    ;; try `cape-dict'.
+    (setq text-mode-ispell-word-completion nil)
+
+    ;; Emacs 28 and newer: Hide commands in M-x which do not apply to the current
+    ;; mode.  Corfu commands are hidden, since they are not used via M-x. This
+    ;; setting is useful beyond Corfu.
+    (setq read-extended-command-predicate #'command-completion-default-include-p))
+#+end_src
+
+* Languages
+
+** Nix
+Nix major mode.
+#+begin_src emacs-lisp
+  (use-package nix-mode
+    :mode "\\.nix\\'"
+    :hook (nix-mode . eglot-ensure))
+#+end_src
+
+** Golang
+Go major mode.
+#+begin_src emacs-lisp
+  (use-package go-mode
+    :hook (go-mode . eglot-ensure)
+    :config (add-hook 'go-mode-hook (lambda () (setq tab-width 4
+						     indent-tabs-mode 1))))
+#+end_src
+
+** Terraform
+Terraform major mode.
+#+begin_src emacs-lisp
+  (use-package terraform-mode
+    :hook (terraform-mode . eglot-ensure))
+#+end_src
+
+** Dockerfile
+Dockerfile major mode.
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode
+    :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+#+end_src
+
+** Yaml
+Yaml major mode.
+#+begin_src emacs-lisp
+  (use-package yaml-mode
+    :hook (yaml-mode . eglot-ensure)
+    :config
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+    (add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+    (add-hook 'yaml-mode-hook
+    '(lambda ()
+       (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+#+end_src
+
 * Misc
 
 ** Bars
@@ -222,4 +317,15 @@ Disable ring bell (also visual indicator).
 Enable word wrap.
 #+begin_src emacs-lisp
   (global-visual-line-mode t)
+#+end_src
+
+** Projectile
+Project management.
+#+begin_src emacs-lisp
+    (use-package projectile
+      :config
+      (projectile-mode +1)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+      (setq projectile-project-search-path '("~/spaghetti/"))
+      (projectile-discover-projects-in-search-path))
 #+end_src

@@ -2,7 +2,8 @@
   home.packages = with pkgs; [
     terraform-ls
     tflint
-    tfsec
+    # tfsec
+    trivy
     terraform-docs
     tfswitch
   ];
