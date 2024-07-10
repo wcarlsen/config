@@ -15,6 +15,7 @@
       ms-python.python
       asdine.cue
       timonwong.shellcheck
+      mkhl.direnv
     ];
     userSettings = {
       security.workspace.trust.enabled = false;

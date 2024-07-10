@@ -3,6 +3,7 @@
     # Nix packages
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Hardware modules
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
@@ -40,6 +41,7 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-unstable,
+    nixpkgs-master,
     nixos-hardware,
     home-manager,
     plasma-manager,
@@ -62,7 +64,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs username plasma-manager org-babel gpg-conf k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {inherit pkgs system nixpkgs-master username plasma-manager org-babel gpg-conf k9s-catppuccin;};
       home-manager.sharedModules = [
         # nixvim.homeManagerModules.nixvim
       ];
