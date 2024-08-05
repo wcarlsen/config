@@ -1,9 +1,6 @@
-{nixpkgs-master, system, ...}:
-let
-  masterPkgs = import nixpkgs-master { inherit system; };
-in
+{pkgs, ...}:
 {
-  home.packages = with masterPkgs; [thefuck];
+  home.packages = with pkgs; [thefuck];
 
   # Zsh plugin
   programs.zsh.oh-my-zsh.plugins = ["thefuck"];

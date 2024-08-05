@@ -1,7 +1,5 @@
-{pkgs, nixpkgs-master, system, ...}:
-let
-  masterPkgs = import nixpkgs-master { inherit system; };
-in{
+{pkgs, ...}:
+{
   home.packages = with pkgs; [
     spotify
     slack
@@ -9,7 +7,6 @@ in{
     mpv
     github-desktop
     insomnia
-  ] ++ (with masterPkgs; [
     bitwarden
-  ]);
+  ];
 }
