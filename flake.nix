@@ -23,6 +23,7 @@
 
     # Emacs-overlay
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs-unstable";
     org-babel.url = "github:emacs-twist/org-babel";
 
     # Ssh keys
