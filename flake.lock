@@ -1,45 +1,5 @@
 {
   "nodes": {
-    "emacs-overlay": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "nixpkgs-stable": "nixpkgs-stable"
-      },
-      "locked": {
-        "lastModified": 1724292154,
-        "narHash": "sha256-iEp23Dni4QufTXHDZDgLdkfQ7KUdHH96ZAjQxlQg41E=",
-        "owner": "nix-community",
-        "repo": "emacs-overlay",
-        "rev": "618b258c4f0eb823e9d1feabac6ae9d164b77c19",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "emacs-overlay",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "gpg-conf": {
       "flake": false,
       "locked": {
@@ -109,50 +69,19 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1724098845,
-        "narHash": "sha256-D5HwjQw/02fuXbR4LCTo64koglP2j99hkDR79/3yLOE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "f1bad50880bae73ff2d82fafc22010b4fc097a9c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1723991338,
-        "narHash": "sha256-Grh5PF0+gootJfOJFenTTxDTYPidA3V28dqJ/WV7iis=",
+        "lastModified": 1724224976,
+        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8a3354191c0d7144db9756a74755672387b702ba",
+        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "org-babel": {
-      "locked": {
-        "lastModified": 1720009466,
-        "narHash": "sha256-/8exp1bCK9aJczbITjiwhKonFd1FejRL6k93iXVNWf0=",
-        "owner": "emacs-twist",
-        "repo": "org-babel",
-        "rev": "8684ef7fcdcd65f29129596c05fede1eb63c21b3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "emacs-twist",
-        "repo": "org-babel",
         "type": "github"
       }
     },
@@ -181,13 +110,11 @@
     },
     "root": {
       "inputs": {
-        "emacs-overlay": "emacs-overlay",
         "gpg-conf": "gpg-conf",
         "home-manager": "home-manager",
         "k9s-catppuccin": "k9s-catppuccin",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "org-babel": "org-babel",
         "plasma-manager": "plasma-manager",
         "ssh-keys": "ssh-keys"
       }
@@ -202,21 +129,6 @@
       "original": {
         "type": "file",
         "url": "https://github.com/wcarlsen.keys"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
       }
     }
   },
