@@ -22,5 +22,6 @@
     hey
     jq
     ipcalc
+    wget
   ];
 }
