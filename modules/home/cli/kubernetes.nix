@@ -20,6 +20,7 @@
     cmctl
     weave-gitops
     eks-node-viewer
+    kubeconform
   ];
 
   # Zsh plugin
