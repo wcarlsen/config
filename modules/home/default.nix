@@ -8,5 +8,6 @@
     ./shells
     ./user
     ./cli
+    ./sops
   ];
 }

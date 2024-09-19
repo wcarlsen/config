@@ -30,6 +30,10 @@
     ssh-keys.url = "https://github.com/wcarlsen.keys";
     ssh-keys.flake = false;
 
+    # Sops
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     # Gpg config
     gpg-conf.url = "github:drduh/config";
     gpg-conf.flake = false;
@@ -49,6 +53,7 @@
     # nixvim,
     # emacs-overlay,
     # org-babel,
+    sops-nix,
     ssh-keys,
     gpg-conf,
     k9s-catppuccin,
@@ -84,6 +89,7 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           home-manager.nixosModules.home-manager
           homeManagerConf
+          sops-nix.nixosModules.sops
         ];
       };
       nixos-p15v = nixpkgs-unstable.lib.nixosSystem {
