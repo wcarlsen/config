@@ -34,6 +34,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    # Secrets
+    nix-secrets.url = "git+ssh://git@github.com/wcarlsen/config-secrets.git?ref=master&shallow=1";
+    nix-secrets.flake = false;
+
     # Gpg config
     gpg-conf.url = "github:drduh/config";
     gpg-conf.flake = false;
@@ -54,6 +58,7 @@
     # emacs-overlay,
     # org-babel,
     sops-nix,
+    nix-secrets,
     ssh-keys,
     gpg-conf,
     k9s-catppuccin,
@@ -80,7 +85,7 @@
       nixos-x1 = nixpkgs-unstable.lib.nixosSystem {
         system = system;
         specialArgs = {
-          inherit username ssh-keys;
+          inherit username ssh-keys nix-secrets;
           hostname = "nixos-x1";
         };
         modules = [

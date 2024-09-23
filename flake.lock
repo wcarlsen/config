@@ -53,6 +53,24 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727107377,
+        "narHash": "sha256-97M6/typZvLixKt7mLfpnuz5fnd1ZfrXJjBoK8FKy38=",
+        "ref": "master",
+        "rev": "1eb8721bff7a3c7f09f5307b9fbf8d6b2e7bf9c8",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/wcarlsen/config-secrets.git"
+      },
+      "original": {
+        "ref": "master",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/wcarlsen/config-secrets.git"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1727040444,
@@ -87,11 +105,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1726755586,
-        "narHash": "sha256-PmUr/2GQGvFTIJ6/Tvsins7Q43KTMvMFhvG6oaYK+Wk=",
+        "lastModified": 1726937504,
+        "narHash": "sha256-bvGoiQBvponpZh8ClUcmJ6QnsNKw0EMrCQJARK3bI1c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c04d5652cfa9742b1d519688f65d1bbccea9eb7e",
+        "rev": "9357f4f23713673f310988025d9dc261c20e70c6",
         "type": "github"
       },
       "original": {
@@ -129,6 +147,7 @@
         "gpg-conf": "gpg-conf",
         "home-manager": "home-manager",
         "k9s-catppuccin": "k9s-catppuccin",
+        "nix-secrets": "nix-secrets",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "plasma-manager": "plasma-manager",
