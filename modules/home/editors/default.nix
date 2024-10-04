@@ -5,6 +5,7 @@
     ./vscode.nix
     # ./emacs
     # ./neovim.nix
+    ./nixvim.nix
   ];
 
   home.sessionVariables = {

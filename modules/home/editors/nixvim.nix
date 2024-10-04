@@ -5,15 +5,17 @@
 }: {
   programs.nixvim = {
     enable = true;
-    colorschemes.catppuccin = {
-      enable = true;
-      flavour = "mocha";
-    };
-    globals = {
-      mapleader = " ";
-      maplocalleader = " ";
-    };
-    options = {
+
+    # Colorscheme
+    colorschemes.catppuccin.enable = true;
+    colorschemes.catppuccin.settings.flavour = "mocha";
+
+    # Leader
+    globals.mapleader = " ";
+    globals.maplocalleader = " ";
+
+    # Options
+    opts = {
       number = true;
       relativenumber = true;
       hlsearch = true;
@@ -24,23 +26,35 @@
       swapfile = false;
       guifont = "FantasqueSansM Nerd Font:h12";
     };
+
+    # Keymaps
+    keymaps = [
+      {
+        key = "<leader>ft";
+        action = ":Neotree<CR>";
+      }
+    ];
+
+    # Plugins
     plugins = {
+
       # Visual
       lualine.enable = true;
       rainbow-delimiters.enable = true;
       bufferline.enable = true;
+      web-devicons.enable = true; # required by bufferline and telescope
       indent-blankline.enable = true;
       treesitter.enable = true;
       noice = {
         enable = true;
-        notify.enabled = false;
+        # notify.enabled = false;
       };
 
       # File browsing
       telescope = {
         enable = true;
         keymaps = {
-          "<leader>ff" = "find_files";
+          "<leader>ff" = "find_files hidden=true";
           "<leader>fp" = "git_files";
           "<leader>fg" = "live_grep";
           "<leader>fb" = "buffers";
@@ -51,7 +65,6 @@
         enable = true;
         window.position = "right";
       };
-      oil.enable = true;
 
       # Git
       gitsigns.enable = true;
@@ -65,12 +78,24 @@
           #   shellcheck.enable = true;
           # };
           formatting = {
+            # Nix
             alejandra.enable = true;
+
+            # Python
             black.enable = true;
             isort.enable = true;
+
+            # Go
             gofmt.enable = true;
+
+            # Terraform
             terraform_fmt.enable = true;
+
+            # Yaml
             yamlfmt.enable = true;
+            # yamllint.enable = true;
+
+            # Shell
             shellharden.enable = true;
           };
         };
@@ -123,7 +148,7 @@
           };
         };
         servers = {
-          nil_ls.enable = true;
+          nil-ls.enable = true;
           terraformls.enable = true;
           yamlls.enable = true;
           bashls.enable = true;
@@ -137,18 +162,19 @@
 
       # Misc
       floaterm.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       nvim-autopairs.enable = true;
+      sleuth.enable = true;
     };
   };
 
   home.packages = with pkgs;
-    (
-      if config.programs.nixvim.plugins.telescope.enable
-      then [ripgrep]
-      else []
-    )
-    ++ [
-      neovide
-    ];
+  (
+    if config.programs.nixvim.plugins.telescope.enable
+    then [ripgrep]
+    else []
+  )
+  ++ [
+    neovide
+  ];
 }
