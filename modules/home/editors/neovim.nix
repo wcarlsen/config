@@ -44,7 +44,10 @@
       bufferline.enable = true;
       web-devicons.enable = true; # required by bufferline and telescope
       indent-blankline.enable = true;
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings.auto_install = true;
+      };
       noice = {
         enable = true;
         # notify.enabled = false;
@@ -100,6 +103,7 @@
           };
         };
       };
+      trouble.enable = true;
 
       # Completion
       cmp = {

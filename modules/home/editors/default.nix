@@ -3,9 +3,8 @@
   imports = [
     ./helix.nix
     ./vscode.nix
-    # ./emacs
-    # ./neovim.nix
-    ./nixvim.nix
+    ./emacs
+    ./neovim.nix
   ];
 
   home.sessionVariables = {
