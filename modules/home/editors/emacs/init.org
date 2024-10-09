@@ -306,7 +306,7 @@ Show identation.
 #+begin_src emacs-lisp
   (use-package indent-guide
     :config
-    (add-hook 'prog-mode-hook #'indent-guide-mode))
+    (indent-guide-global-mode))
 #+end_src
 
 ** Sound

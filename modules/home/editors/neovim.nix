@@ -152,7 +152,7 @@
           };
         };
         servers = {
-          nil-ls.enable = true;
+          nil_ls.enable = true;
           terraformls.enable = true;
           yamlls.enable = true;
           bashls.enable = true;
