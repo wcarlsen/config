@@ -4,6 +4,7 @@
     tflint
     # tfsec
     trivy
+    # checkov
     terraform-docs
     tfswitch
   ];
