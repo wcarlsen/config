@@ -1,4 +1,3 @@
-{config, ... }:
 {
   imports = [
     ./helix.nix

@@ -5,7 +5,6 @@
   ssh-keys,
   ...
 }: {
-
   sops.secrets.wcarlsen-password.neededForUsers = true;
   users.mutableUsers = false;
 

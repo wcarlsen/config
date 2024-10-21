@@ -37,7 +37,6 @@
 
     # Plugins
     plugins = {
-
       # Visual
       lualine.enable = true;
       rainbow-delimiters.enable = true;
@@ -173,12 +172,12 @@
   };
 
   home.packages = with pkgs;
-  (
-    if config.programs.nixvim.plugins.telescope.enable
-    then [ripgrep]
-    else []
-  )
-  ++ [
-    neovide
-  ];
+    (
+      if config.programs.nixvim.plugins.telescope.enable
+      then [ripgrep]
+      else []
+    )
+    ++ [
+      neovide
+    ];
 }

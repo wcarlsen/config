@@ -2,8 +2,8 @@
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-   programs.ssh = {
-     enable = true;
+  programs.ssh = {
+    enable = true;
 
     matchBlocks = {
       "yubikey-hosts" = {
@@ -12,5 +12,5 @@
         identityFile = ["~/.ssh/id_rsa_yubikey.pub"];
       };
     };
-   };
+  };
 }

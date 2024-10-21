@@ -1,4 +1,8 @@
-{pkgs, plasma-manager, ...}: {
+{
+  pkgs,
+  plasma-manager,
+  ...
+}: {
   imports = [
     (plasma-manager + "/modules")
   ];

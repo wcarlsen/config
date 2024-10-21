@@ -47,7 +47,7 @@
     k9s-catppuccin.flake = false;
   };
 
-  outputs = inputs @ {
+  outputs = {
     nixpkgs-unstable,
     nixos-hardware,
     home-manager,

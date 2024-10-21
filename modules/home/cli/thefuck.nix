@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [thefuck];
 
   # Zsh plugin

@@ -3,5 +3,6 @@
     nil
     alejandra
     devenv
+    deadnix
   ];
 }

@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/astro/deadnix
+    rev: v1.2.1
+    hooks:
+      - id: deadnix
+        #args: [--edit] # Uncomment to automatically modify files
+        stages: [commit]
+  - repo: https://github.com/kamadorueda/alejandra
+    rev: 3.0.0
+    hooks:
+      - id: alejandra-system
