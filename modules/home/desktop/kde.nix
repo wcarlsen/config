@@ -1,6 +1,10 @@
-{plasma-manager, ...}: {
+{pkgs, plasma-manager, ...}: {
   imports = [
     (plasma-manager + "/modules")
+  ];
+
+  home.packages = with pkgs; [
+    banana-cursor
   ];
 
   programs.plasma = {
@@ -9,6 +13,8 @@
     workspace = {
       clickItemTo = "select";
       theme = "breeze-dark";
+      cursor.theme = "Banana";
+      cursor.size = 30;
       colorScheme = "BreezeDark";
       wallpaper = ./backgrounds/hannah-montana-linux.png;
     };

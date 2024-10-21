@@ -13,7 +13,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Plasma-manager
-    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.url = "github:nix-community/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     plasma-manager.inputs.home-manager.follows = "home-manager";
 
