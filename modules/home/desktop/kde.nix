@@ -18,7 +18,7 @@
       clickItemTo = "select";
       theme = "breeze-dark";
       cursor.theme = "Banana";
-      cursor.size = 30;
+      cursor.size = 40;
       colorScheme = "BreezeDark";
       wallpaper = ./backgrounds/hannah-montana-linux.png;
     };
