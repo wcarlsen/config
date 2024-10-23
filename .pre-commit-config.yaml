@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: deadnix
         #args: [--edit] # Uncomment to automatically modify files
-        stages: [commit]
+        stages: [pre-commit]
   - repo: https://github.com/kamadorueda/alejandra
     rev: 3.0.0
     hooks:
