@@ -4,5 +4,6 @@
     alejandra
     devenv
     deadnix
+    statix
   ];
 }

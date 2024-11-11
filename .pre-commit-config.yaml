@@ -3,9 +3,13 @@ repos:
     rev: v1.2.1
     hooks:
       - id: deadnix
-        #args: [--edit] # Uncomment to automatically modify files
         stages: [pre-commit]
   - repo: https://github.com/kamadorueda/alejandra
     rev: 3.0.0
     hooks:
       - id: alejandra-system
+  - repo: https://github.com/fidgetingbits/pre-commit-statix
+    rev: v1.0.0
+    hooks:
+      - id: statix-fix
+      - id: statix-check

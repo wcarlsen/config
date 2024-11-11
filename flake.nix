@@ -81,7 +81,7 @@
   in {
     nixosConfigurations = {
       nixos-x1 = nixpkgs-unstable.lib.nixosSystem {
-        system = system;
+        inherit system;
         specialArgs = {
           inherit username ssh-keys nix-secrets;
           hostname = "nixos-x1";
@@ -96,7 +96,7 @@
         ];
       };
       nixos-p15v = nixpkgs-unstable.lib.nixosSystem {
-        system = system;
+        inherit system;
         specialArgs = {
           inherit username ssh-keys nix-secrets;
           hostname = "nixos-p15v";
@@ -111,7 +111,7 @@
         ];
       };
       nixos-surface = nixpkgs-unstable.lib.nixosSystem {
-        system = system;
+        inherit system;
         specialArgs = {
           inherit username ssh-keys nix-secrets;
           hostname = "nixos-surface";
