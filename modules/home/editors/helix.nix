@@ -22,9 +22,9 @@
         "collapse_selection"
         "keep_primary_selection"
       ];
-      # keys.normal."C-f" = [":new" ":insert-output TEMP=$(mktemp); lf -selection-path=$TEMP; cat $TEMP" "select_all" "split_selection_on_newline" "goto_file" "goto_last_modified_file" ":buffer-close!" ":redraw"];
+      keys.normal."C-f" = [":new" ":insert-output TEMP=$(mktemp); lf -selection-path=$TEMP; cat $TEMP" "select_all" "split_selection_on_newline" "goto_file" "goto_last_modified_file" ":buffer-close!" ":redraw"];
     };
   };
 
-  # programs.lf.enable = true;
+  programs.lf.enable = true;
 }
