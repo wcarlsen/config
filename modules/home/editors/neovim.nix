@@ -171,13 +171,9 @@
     };
   };
 
-  home.packages = with pkgs;
-    (
-      if config.programs.nixvim.plugins.telescope.enable
-      then [ripgrep]
-      else []
-    )
-    ++ [
-      neovide
-    ];
+  home.packages = with pkgs; (
+    if config.programs.nixvim.plugins.telescope.enable
+    then [ripgrep]
+    else []
+  );
 }
