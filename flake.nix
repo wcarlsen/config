@@ -3,7 +3,7 @@
     # Nix packages
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.04";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Hardware modules
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
