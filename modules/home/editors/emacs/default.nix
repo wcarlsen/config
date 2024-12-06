@@ -14,9 +14,9 @@ in {
       alwaysTangle = true;
       config = ./init.org;
       defaultInitFile = false;
-      extraEmacsPackages = epkgs: [
-        epkgs.treesit-grammars.with-all-grammars
-      ];
+      #  extraEmacsPackages = epkgs: [
+      #    epkgs.treesit-grammars.with-all-grammars
+      #  ];
     })
   ];
   home.file.".emacs.d/init.el".text = tangle (builtins.readFile ./init.org);

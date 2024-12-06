@@ -2,7 +2,7 @@
   imports = [
     ./helix.nix
     ./vscode.nix
-    # ./emacs
+    ./emacs
     # ./neovim.nix
   ];
 
