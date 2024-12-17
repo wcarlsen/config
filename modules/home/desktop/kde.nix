@@ -21,6 +21,10 @@
       cursor.size = 40;
       colorScheme = "BreezeDark";
       wallpaper = ./backgrounds/hannah-montana-linux.png;
+      wallpaperBackground = {
+        # blur = true;
+        color = "219,99,99";
+      };
     };
     kwin = {
       nightLight = {

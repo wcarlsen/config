@@ -23,6 +23,5 @@
     jq
     ipcalc
     wget
-    texliveBasic
   ];
 }
