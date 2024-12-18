@@ -22,8 +22,7 @@
       colorScheme = "BreezeDark";
       wallpaper = ./backgrounds/hannah-montana-linux.png;
       wallpaperBackground = {
-        # blur = true;
-        color = "219,99,99";
+        color = "0,0,0";
       };
     };
     kwin = {
