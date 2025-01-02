@@ -16,6 +16,7 @@
       asdine.cue
       timonwong.shellcheck
       mkhl.direnv
+      github.copilot
     ];
     userSettings = {
       security.workspace.trust.enabled = false;
@@ -34,13 +35,13 @@
         fontSize = 18;
       };
       files.trimTrailingWhitespace = true;
-      "[terraform]".editor.tabSize = 2;
-      "[javascript]".editor.tabSize = 2;
-      "[html]".editor.tabSize = 2;
-      "[json]".editor.tabSize = 2;
-      "[yaml]".editor.tabSize = 2;
-      "[nix]".editor.tabSize = 2;
-      "[lua]".editor.tabSize = 2;
+      "[terraform]"."editor.tabSize" = 2;
+      "[javascript]"."editor.tabSize" = 2;
+      "[html]"."editor.tabSize" = 2;
+      "[json]"."editor.tabSize" = 2;
+      "[yaml]"."editor.tabSize" = 2;
+      "[nix]"."editor.tabSize" = 2;
+      "[lua]"."editor.tabSize" = 2;
       projectManager.git.baseFolders = [
         "~/spaghetti"
       ];
