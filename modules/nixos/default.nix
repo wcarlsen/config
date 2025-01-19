@@ -9,6 +9,5 @@
     ./security
     ./virtualization
     ./gaming
-    ./sops
   ];
 }

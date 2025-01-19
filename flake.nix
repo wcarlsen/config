@@ -21,18 +21,6 @@
     ssh-keys.url = "https://github.com/wcarlsen.keys";
     ssh-keys.flake = false;
 
-    # Sops
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    # Secrets
-    nix-secrets.url = "git+ssh://git@github.com/wcarlsen/config-secrets.git?ref=master&shallow=1";
-    nix-secrets.flake = false;
-
-    # Gpg config
-    gpg-conf.url = "github:drduh/config";
-    gpg-conf.flake = false;
-
     # Catppuccin for k9s
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
@@ -43,10 +31,7 @@
     nixos-hardware,
     home-manager,
     plasma-manager,
-    sops-nix,
-    nix-secrets,
     ssh-keys,
-    gpg-conf,
     k9s-catppuccin,
     ...
   }: let
@@ -60,7 +45,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager gpg-conf k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin;};
       home-manager.sharedModules = [];
     };
   in {
@@ -68,7 +53,7 @@
       nixos-x1 = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit username ssh-keys nix-secrets;
+          inherit username ssh-keys;
           hostname = "nixos-x1";
         };
         modules = [
@@ -77,13 +62,12 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           home-manager.nixosModules.home-manager
           homeManagerConf
-          sops-nix.nixosModules.sops
         ];
       };
       nixos-p15v = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit username ssh-keys nix-secrets;
+          inherit username ssh-keys;
           hostname = "nixos-p15v";
         };
         modules = [
@@ -92,13 +76,12 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-p51
           home-manager.nixosModules.home-manager
           homeManagerConf
-          sops-nix.nixosModules.sops
         ];
       };
       nixos-surface = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit username ssh-keys nix-secrets;
+          inherit username ssh-keys;
           hostname = "nixos-surface";
         };
         modules = [
@@ -107,7 +90,6 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.home-manager
           homeManagerConf
-          sops-nix.nixosModules.sops
         ];
       };
     };
