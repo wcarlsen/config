@@ -27,11 +27,11 @@
       editor = {
         renderWhitespace = "boundary";
         wordWrap = "on";
-        fontFamily = "'FantasqueSansMono Nerd Font Mono'";
+        fontFamily = "'Maple Mono'";
         fontSize = 18;
       };
       terminal.integrated = {
-        fontFamily = "'FantasqueSansMono Nerd Font Mono'";
+        fontFamily = "'Maple Mono'";
         fontSize = 18;
       };
       files.trimTrailingWhitespace = true;

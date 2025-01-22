@@ -7,7 +7,7 @@
     };
     font = {
       package = null;
-      name = "FantasqueSansM Nerd Font Mono";
+      name = "Maple Mono";
       size = 13;
     };
   };
