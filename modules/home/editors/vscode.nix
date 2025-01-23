@@ -29,6 +29,7 @@
         wordWrap = "on";
         fontFamily = "'Maple Mono'";
         fontSize = 18;
+        fontLigatures = true;
       };
       terminal.integrated = {
         fontFamily = "'Maple Mono'";

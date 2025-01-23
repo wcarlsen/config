@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     poetry
-    python311Packages.python-lsp-server
-    gcc
+    ruff
   ];
 
   programs.zsh.sessionVariables = {
