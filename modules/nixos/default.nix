@@ -7,7 +7,6 @@
     ./system
     ./users
     ./security
-    ./virtualization
     ./gaming
   ];
 }

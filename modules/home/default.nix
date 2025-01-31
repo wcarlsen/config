@@ -8,5 +8,6 @@
     ./user
     ./cli
     ./sops
+    ./virtualization
   ];
 }
