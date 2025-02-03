@@ -42,6 +42,15 @@
       zsh_use_rps1: true
   '';
 
+  # Minikube
+  home.file.".minikube/config/config.json".text = ''
+    {
+      "rootless": true,
+      "driver": "podman",
+      "container-runtime": "containerd"
+    }
+  '';
+
   # K9s
   programs.k9s = {
     enable = true;
