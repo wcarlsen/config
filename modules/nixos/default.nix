@@ -8,5 +8,6 @@
     ./users
     ./security
     ./gaming
+    ./firmware
   ];
 }
