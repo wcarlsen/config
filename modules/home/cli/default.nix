@@ -10,7 +10,7 @@
     ./misc.nix
     ./thefuck.nix
     ./tmux.nix
-    ./zellij.nix
+    # ./zellij.nix
     ./zoxide.nix
   ];
 }
