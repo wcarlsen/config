@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
-    enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.enableExtensionUpdateCheck = false;
+    profiles.default.enableUpdateCheck = false;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
       catppuccin.catppuccin-vsc
       github.vscode-github-actions
@@ -18,7 +18,7 @@
       mkhl.direnv
       github.copilot
     ];
-    userSettings = {
+    profiles.default.userSettings = {
       security.workspace.trust.enabled = false;
       workbench = {
         sideBar.location = "right";

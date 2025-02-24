@@ -9,5 +9,7 @@
     ./cli
     ./sops
     ./virtualization
+    ./video
+    ./photos
   ];
 }
