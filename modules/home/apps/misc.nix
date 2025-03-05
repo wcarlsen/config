@@ -7,5 +7,6 @@
     github-desktop
     insomnia
     bitwarden
+    dbeaver-bin
   ];
 }
