@@ -24,6 +24,9 @@
     # Catppuccin for k9s
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
+
+    # Zen-browser
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = {
@@ -33,6 +36,7 @@
     plasma-manager,
     ssh-keys,
     k9s-catppuccin,
+    zen-browser,
     ...
   }: let
     username = "wcarlsen";
@@ -45,7 +49,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin zen-browser;};
       home-manager.sharedModules = [];
     };
   in {

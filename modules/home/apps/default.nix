@@ -4,5 +4,6 @@
     ./kitty.nix
     ./misc.nix
     ./firefox.nix
+    # ./zen-browser.nix
   ];
 }

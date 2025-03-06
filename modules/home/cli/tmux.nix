@@ -36,21 +36,11 @@
       sensible
       catppuccin
       yank
-      # urlview
       tmux-fzf
       jump
     ];
   };
 
-  # Urlview
-  # home.packages = with pkgs; [
-  #   urlview
-  # ];
-
-  # home.file.".urlview".text = ''
-  #   COMMAND xdg-open
-  # '';
-
   # Zsh plugin
-  # programs.zsh.oh-my-zsh.plugins = [ "tmux" ]; # breaks loading tmux.conf
+  programs.zsh.oh-my-zsh.plugins = ["tmux"];
 }
