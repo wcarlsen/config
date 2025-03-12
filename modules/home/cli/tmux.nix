@@ -4,7 +4,7 @@
     prefix = "C-a";
     historyLimit = 50000;
     baseIndex = 1;
-    keyMode = "vi";
+    keyMode = "emacs";
     mouse = true;
     extraConfig = ''
       # Fix terminal colors
@@ -33,8 +33,8 @@
     '';
     sensibleOnTop = true;
     plugins = with pkgs.tmuxPlugins; [
-      sensible
       catppuccin
+      sensible
       yank
       tmux-fzf
       jump
