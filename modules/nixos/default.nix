@@ -9,5 +9,6 @@
     ./security
     ./gaming
     ./firmware
+    ./security
   ];
 }
