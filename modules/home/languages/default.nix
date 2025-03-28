@@ -10,5 +10,6 @@
     ./cue.nix
     ./javascript.nix
     ./rust.nix
+    ./jsonnet.nix
   ];
 }

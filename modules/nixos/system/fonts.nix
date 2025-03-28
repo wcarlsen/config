@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
-    # nerd-fonts.fantasque-sans-mono
-    maple-mono
+    nerd-fonts.fantasque-sans-mono
+    # maple-mono
   ];
 }

@@ -32,7 +32,7 @@
         fontLigatures = true;
       };
       terminal.integrated = {
-        fontFamily = "'Maple Mono'";
+        fontFamily = "'FantasqueSansMono Nerd Font Mono'";
         fontSize = 18;
       };
       files.trimTrailingWhitespace = true;

@@ -6,11 +6,11 @@
     ./eza.nix
     ./git.nix
     ./kubernetes.nix
-    ./mcfly.nix
+    ./atuin.nix
     ./misc.nix
     ./thefuck.nix
-    ./tmux.nix
-    # ./zellij.nix
+    # ./tmux.nix
+    ./zellij.nix
     ./zoxide.nix
   ];
 }
