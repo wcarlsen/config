@@ -25,8 +25,8 @@
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
 
-    # Zen-browser
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # Helix
+    helix.url = "github:helix-editor/helix";
   };
 
   outputs = {
@@ -36,7 +36,7 @@
     plasma-manager,
     ssh-keys,
     k9s-catppuccin,
-    zen-browser,
+    helix,
     ...
   }: let
     username = "wcarlsen";
@@ -49,8 +49,9 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin zen-browser;};
-      home-manager.sharedModules = [];
+      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin helix;};
+      home-manager.sharedModules = [
+      ];
     };
   in {
     nixosConfigurations = {

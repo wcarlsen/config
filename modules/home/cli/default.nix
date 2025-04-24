@@ -12,5 +12,6 @@
     # ./tmux.nix
     ./zellij.nix
     ./zoxide.nix
+    ./gcp.nix
   ];
 }

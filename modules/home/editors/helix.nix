@@ -1,6 +1,11 @@
 {
+  helix,
+  system,
+  ...
+}: {
   programs.helix = {
     enable = true;
+    package = helix.packages.${system}.default;
     settings = {
       theme = "catppuccin_mocha";
       editor = {
