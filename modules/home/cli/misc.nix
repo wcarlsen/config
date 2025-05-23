@@ -23,5 +23,6 @@
     jq
     ipcalc
     wget
+    ncspot
   ];
 }

@@ -3,8 +3,9 @@
     enable = true;
     settings = {
       theme = "catppuccin-mocha";
-      font-family = "FantasqueSansM Nerd Font Mono";
+      font-family = "Maple Mono";
       font-size = 13;
+      font-feature = "liga, dlig, calt";
     };
   };
 }
