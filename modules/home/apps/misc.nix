@@ -7,5 +7,6 @@
     insomnia
     bitwarden
     dbeaver-bin
+    code-cursor
   ];
 }
