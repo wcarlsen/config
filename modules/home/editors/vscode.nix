@@ -16,7 +16,7 @@
       asdine.cue
       timonwong.shellcheck
       mkhl.direnv
-      # github.copilot
+      github.copilot
     ];
     profiles.default.userSettings = {
       security.workspace.trust.enabled = false;

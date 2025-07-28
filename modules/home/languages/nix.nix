@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     nil
     alejandra
-    devenv
+    # devenv
     deadnix
     statix
   ];
