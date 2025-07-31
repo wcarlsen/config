@@ -3,7 +3,7 @@
     # Nix packages
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.04";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Hardware modules
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
@@ -31,7 +31,7 @@
 
   outputs = {
     nixpkgs-unstable,
-    nixpkgs-master,
+    # nixpkgs-master,
     nixos-hardware,
     home-manager,
     plasma-manager,
@@ -45,12 +45,15 @@
     pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "libsoup-2.74.3"
+      ];
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs system username nixpkgs-master plasma-manager k9s-catppuccin helix;};
+      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin helix;};
       home-manager.sharedModules = [
       ];
     };
