@@ -6,7 +6,6 @@
     silver-searcher
     bind
     pre-commit
-    bind
     yubikey-manager
     yubikey-personalization
     gitleaks
