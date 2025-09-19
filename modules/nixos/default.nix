@@ -10,5 +10,6 @@
     ./gaming
     ./firmware
     ./security
+    ./1password
   ];
 }

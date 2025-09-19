@@ -1,9 +1,9 @@
 {
   inputs = {
     # Nix packages
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.04";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Hardware modules
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
@@ -31,7 +31,7 @@
 
   outputs = {
     nixpkgs-unstable,
-    # nixpkgs-master,
+    nixpkgs,
     nixos-hardware,
     home-manager,
     plasma-manager,
@@ -53,36 +53,37 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs system username plasma-manager k9s-catppuccin helix;};
+      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs system username ssh-keys plasma-manager k9s-catppuccin helix;};
       home-manager.sharedModules = [
       ];
     };
   in {
     nixosConfigurations = {
-      nixos-x1 = nixpkgs-unstable.lib.nixosSystem {
+      nixos-zbook = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit username ssh-keys;
-          hostname = "nixos-x1";
+          hostname = "nixos-zbook";
         };
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];
       };
-      nixos-p15v = nixpkgs-unstable.lib.nixosSystem {
+      nixos-p15s = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit username ssh-keys;
-          hostname = "nixos-p15v";
+          hostname = "nixos-p15s";
         };
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
-          nixos-hardware.nixosModules.lenovo-thinkpad-p51
+          nixos-hardware.nixosModules.lenovo-thinkpad-p14s-intel-gen5
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];

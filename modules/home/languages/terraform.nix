@@ -2,11 +2,13 @@
   home.packages = with pkgs; [
     terraform-ls
     tflint
-    # tfsec
     trivy
-    # checkov
-    terraform-docs
+    # terraform-docs
     tfswitch
+    terraform
+    opentofu
+    terragrunt
+    hcledit
   ];
 
   # Tfswitch
@@ -16,5 +18,5 @@
   '';
 
   # Zsh plugin
-  programs.zsh.oh-my-zsh.plugins = ["terraform"];
+  programs.zsh.oh-my-zsh.plugins = ["opentofu"];
 }

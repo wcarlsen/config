@@ -1,11 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    spotify
-    slack
-    mpv
-    github-desktop
-    insomnia
     bitwarden
     dbeaver-bin
+    discord
+    github-desktop
+    insomnia
+    mpv
+    slack
+    spotify
   ];
 }

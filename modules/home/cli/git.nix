@@ -1,13 +1,14 @@
+{pkgs, ssh-keys, ...}:
 {
   programs.git = {
     enable = true;
     userName = "Willi Carlsen";
     userEmail = "carlsenwilli@gmail.com";
     extraConfig = {
-      github = {
-        user = "wcarlsen";
-        signing = "0x983F48E12A6B265E";
-      };
+      commit.gpgsign = true;
+      gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
       push.autoSetupRemote = true;
       pull = {
         rebase = false;
@@ -24,6 +25,9 @@
   # Github tui
   programs = {
     gh.enable = true;
+    gh.extensions = with pkgs; [
+      gh-copilot
+    ];
     gh-dash.enable = true;
   };
 
@@ -35,4 +39,7 @@
     groot = "cd $(git rev-parse --show-toplevel)";
     ghprc = "gh pr create --fill";
   };
+
+  # Allowed signers
+  home.file.".ssh/allowed_signers".text = ssh-keys.outPath;
 }

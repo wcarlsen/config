@@ -12,11 +12,12 @@
       bbenoist.nix
       jnoortheen.nix-ide
       hashicorp.terraform
-      ms-python.python
-      asdine.cue
+      # ms-python.python
+      # asdine.cue
       timonwong.shellcheck
       mkhl.direnv
       github.copilot
+      github.copilot-chat
     ];
     profiles.default.userSettings = {
       security.workspace.trust.enabled = false;
