@@ -13,5 +13,6 @@
     ./zoxide.nix
     ./gcp.nix
     ./pay-respects.nix
+    ./carapace.nix
   ];
 }
