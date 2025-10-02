@@ -1,15 +1,26 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    terraform-ls
-    tflint
-    trivy
-    # terraform-docs
-    tfswitch
-    terraform
-    opentofu
-    terragrunt
-    hcledit
-  ];
+{
+  pkgs,
+  nixpkgs-master,
+  system,
+  ...
+}: let
+  masterPkgs = import nixpkgs-master {inherit system;};
+in {
+  home.packages = with pkgs;
+    [
+      terraform-ls
+      tflint
+      trivy
+      # terraform-docs
+      tfswitch
+      terraform
+      opentofu
+      terragrunt
+      hcledit
+    ]
+    ++ (with masterPkgs; [
+      terraform-docs
+    ]);
 
   # Tfswitch
   home.file.".tfswitch.toml".text = ''

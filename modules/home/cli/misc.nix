@@ -1,7 +1,4 @@
-{pkgs, nixpkgs, system, ...}:
-let
-  stablePkgs = import nixpkgs { inherit system; };
-in{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     gnumake
     gnupg
@@ -26,7 +23,6 @@ in{
     ipcalc
     wget
     ncspot
-  ] ++ (with stablePkgs; [
     azure-cli
-  ]);
+  ];
 }

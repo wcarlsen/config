@@ -1,7 +1,7 @@
 {
   inputs = {
     # Nix packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
@@ -30,8 +30,9 @@
   };
 
   outputs = {
+    nixpkgs-master,
     nixpkgs-unstable,
-    nixpkgs,
+    nixpkgs-stable,
     nixos-hardware,
     home-manager,
     plasma-manager,
@@ -45,15 +46,12 @@
     pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      config.permittedInsecurePackages = [
-        "libsoup-2.74.3"
-      ];
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs system username ssh-keys plasma-manager k9s-catppuccin helix;};
+      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys plasma-manager k9s-catppuccin helix;};
       home-manager.sharedModules = [
       ];
     };
@@ -69,7 +67,6 @@
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
           nixos-hardware.nixosModules.common-cpu-amd
-          # nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];

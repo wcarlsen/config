@@ -1,5 +1,8 @@
-{pkgs, ssh-keys, ...}:
 {
+  pkgs,
+  ssh-keys,
+  ...
+}: {
   programs.git = {
     enable = true;
     userName = "Willi Carlsen";

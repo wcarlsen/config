@@ -11,6 +11,8 @@
     banana-cursor
   ];
 
+  services.kdeconnect.enable = true;
+
   programs.plasma = {
     enable = true;
     # overrideConfig = true;

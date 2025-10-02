@@ -1,24 +1,34 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  nixpkgs-master,
+  system,
+  ...
+}: let
+  masterPkgs = import nixpkgs-master {inherit system;};
+in {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
     profiles.default.enableExtensionUpdateCheck = false;
     profiles.default.enableUpdateCheck = false;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      alefragnani.project-manager
-      catppuccin.catppuccin-vsc
-      github.vscode-github-actions
-      golang.go
-      bbenoist.nix
-      jnoortheen.nix-ide
-      hashicorp.terraform
-      # ms-python.python
-      # asdine.cue
-      timonwong.shellcheck
-      mkhl.direnv
-      github.copilot
-      github.copilot-chat
-    ];
+    profiles.default.extensions = with pkgs.vscode-extensions;
+      [
+        alefragnani.project-manager
+        catppuccin.catppuccin-vsc
+        github.vscode-github-actions
+        golang.go
+        bbenoist.nix
+        jnoortheen.nix-ide
+        hashicorp.terraform
+        ms-python.python
+        # asdine.cue
+        timonwong.shellcheck
+        mkhl.direnv
+      ]
+      ++ (with masterPkgs; [
+        github.copilot
+        # github.copilot-chat
+      ]);
     profiles.default.userSettings = {
       security.workspace.trust.enabled = false;
       workbench = {
