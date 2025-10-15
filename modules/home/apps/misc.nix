@@ -8,5 +8,6 @@
     mpv
     slack
     spotify
+    teams-for-linux
   ];
 }
