@@ -5,9 +5,9 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Willi Carlsen";
-    userEmail = "carlsenwilli@gmail.com";
-    extraConfig = {
+    settings.user.name = "Willi Carlsen";
+    settings.user.email = "carlsenwilli@gmail.com";
+    settings = {
       commit.gpgsign = true;
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
@@ -17,8 +17,10 @@
         rebase = false;
       };
     };
-    diff-so-fancy.enable = true;
   };
+
+  programs.diff-so-fancy.enable = true;
+  programs.diff-so-fancy.enableGitIntegration = true;
 
   # Git tui
   programs.lazygit = {

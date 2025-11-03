@@ -13,7 +13,6 @@
     kustomize
     minikube
     fluxcd
-    argo
     kubent
     kubie
     cmctl

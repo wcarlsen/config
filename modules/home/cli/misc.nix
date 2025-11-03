@@ -24,5 +24,7 @@
     wget
     ncspot
     azure-cli
+    github-copilot-cli
+    apacheKafka
   ];
 }

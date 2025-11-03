@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    bitwarden
+    bitwarden-desktop
     dbeaver-bin
     discord
     github-desktop
