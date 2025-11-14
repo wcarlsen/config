@@ -19,6 +19,7 @@
     weave-gitops
     eks-node-viewer
     kubeconform
+    velero
   ];
 
   # Zsh plugin
