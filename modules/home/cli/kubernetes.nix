@@ -20,6 +20,7 @@
     eks-node-viewer
     kubeconform
     velero
+    kor
   ];
 
   # Zsh plugin
