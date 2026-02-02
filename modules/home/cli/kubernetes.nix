@@ -39,6 +39,7 @@
     configs:
       include:
         - ~/.kube/config*.yaml
+        - ~/.kube/config
     prompt:
       zsh_use_rps1: true
   '';

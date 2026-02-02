@@ -22,10 +22,6 @@
       cursor.theme = "Banana";
       cursor.size = 40;
       colorScheme = "BreezeDark";
-      # wallpaper = ./backgrounds/hannah-montana-linux.png;
-      # wallpaperBackground = {
-      #   color = "0,0,0";
-      # };
     };
     kwin = {
       nightLight = {

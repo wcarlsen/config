@@ -31,7 +31,7 @@
   programs = {
     gh.enable = true;
     gh.extensions = with pkgs; [
-      gh-copilot
+      github-copilot-cli
     ];
     gh-dash.enable = true;
   };
