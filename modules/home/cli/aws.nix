@@ -1,19 +1,9 @@
-{
-  pkgs,
-  nixpkgs-stable,
-  system,
-  ...
-}: let
-  stablePkgs = import nixpkgs-stable {inherit system;};
-in {
-  home.packages = with pkgs;
-    [
-      awscli2
-      ec2-instance-selector
-    ]
-    ++ (with stablePkgs; [
-      ssm-session-manager-plugin
-    ]);
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    awscli2
+    ec2-instance-selector
+    ssm-session-manager-plugin
+  ];
 
   # Easy assume roles
   programs.granted.enable = true;

@@ -16,7 +16,6 @@
       # asdine.cue
       timonwong.shellcheck
       mkhl.direnv
-      github.copilot
       github.copilot-chat
     ];
     profiles.default.userSettings = {
