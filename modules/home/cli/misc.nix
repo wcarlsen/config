@@ -26,5 +26,6 @@
     azure-cli
     github-copilot-cli
     apacheKafka
+    envsubst
   ];
 }
