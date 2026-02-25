@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  nixpkgs-stable,
+  system,
+  ...
+}: let
+  stablePkgs = import nixpkgs-stable {inherit system;};
+in {
   home.packages = with pkgs; [
     gnumake
     gnupg
@@ -23,7 +30,8 @@
     ipcalc
     wget
     ncspot
-    azure-cli
+    # azure-cli (from nixos-stable because it's broken on unstable)
+    stablePkgs.azure-cli
     github-copilot-cli
     apacheKafka
     envsubst

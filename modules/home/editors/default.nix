@@ -1,5 +1,6 @@
 {
   imports = [
+    ./mcp.nix
     ./helix.nix
     ./vscode.nix
   ];

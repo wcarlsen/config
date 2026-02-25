@@ -2,6 +2,7 @@
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
+    profiles.default.enableMcpIntegration = true;
     profiles.default.enableExtensionUpdateCheck = false;
     profiles.default.enableUpdateCheck = false;
     profiles.default.extensions = with pkgs.vscode-extensions; [
