@@ -8,6 +8,7 @@
     (wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
         helm-diff
+        helm-schema
       ];
     })
     kustomize

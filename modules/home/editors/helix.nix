@@ -10,10 +10,12 @@
       theme = "catppuccin_mocha";
       editor = {
         cursorline = true;
-        bufferline = "always";
+        bufferline = "multiple";
+        color-modes = true;
         soft-wrap.enable = true;
-        completion-trigger-len = 0;
+        completion-trigger-len = 2;
         whitespace.render.tab = "all";
+        trim-trailing-whitespace = true;
         cursor-shape.insert = "bar";
         file-picker.hidden = false;
         auto-format = true;
@@ -26,6 +28,9 @@
       keys.normal.esc = [
         "collapse_selection"
         "keep_primary_selection"
+      ];
+      keys.insert."C-space" = [
+        "completion"
       ];
     };
   };

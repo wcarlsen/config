@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     terraform-ls
     tflint
-    trivy
+    # trivy # diabled for security reasons
     terraform-docs
     tfswitch
     terraform
