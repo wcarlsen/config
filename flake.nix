@@ -27,6 +27,9 @@
 
     # Helix
     helix.url = "github:helix-editor/helix";
+
+    # Worktrunk
+    worktrunk.url = "github:max-sixty/worktrunk";
   };
 
   outputs = {
@@ -39,6 +42,7 @@
     ssh-keys,
     k9s-catppuccin,
     helix,
+    worktrunk,
     ...
   }: let
     username = "wcarlsen";
@@ -51,7 +55,7 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys plasma-manager k9s-catppuccin helix;};
+      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys plasma-manager k9s-catppuccin helix worktrunk;};
       home-manager.sharedModules = [
       ];
     };
