@@ -13,4 +13,10 @@
     kate
     elisa
   ];
+
+  # Unlock KWallet automatically
+  security.pam.services.kwallet = {
+    name = "kwallet";
+    enableKwallet = true;
+  };
 }
