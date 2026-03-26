@@ -17,6 +17,7 @@
         rebase = false;
       };
     };
+    signing.format = null; # adopt new default
   };
 
   programs.diff-so-fancy.enable = true;

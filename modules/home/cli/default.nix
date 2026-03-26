@@ -14,7 +14,8 @@
     ./gcp.nix
     ./pay-respects.nix
     ./carapace.nix
-    ./yazi.nix
     ./worktrunk.nix
+    ./television.nix
+    ./jj.nix
   ];
 }

@@ -11,7 +11,7 @@ in {
   ];
 
   programs.zsh.initContent = lib.mkOrder 2000 ''
-    eval "$(wt config shell init zsh)"
+    eval "$(${masterPkgs.worktrunk}/bin/wt config shell init zsh)"
   '';
 
   xdg.configFile."worktrunk/config.toml".text = ''
