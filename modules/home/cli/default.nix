@@ -16,6 +16,6 @@
     ./carapace.nix
     ./worktrunk.nix
     ./television.nix
-    ./jj.nix
+    ./jujutsu.nix
   ];
 }

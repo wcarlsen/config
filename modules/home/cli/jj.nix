@@ -1,5 +1,0 @@
-{
-  programs.jj = {
-    enable = true;
-  };
-}
