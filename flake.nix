@@ -1,7 +1,7 @@
 {
   inputs = {
     # Nix packages
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
@@ -21,6 +21,10 @@
     ssh-keys.url = "https://github.com/wcarlsen.keys";
     ssh-keys.flake = false;
 
+    # NixVim
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     # Catppuccin for k9s
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
@@ -34,6 +38,7 @@
     home-manager,
     plasma-manager,
     ssh-keys,
+    nixvim,
     k9s-catppuccin,
     ...
   }: let
@@ -42,13 +47,18 @@
     pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron-39.8.10"
+      ];
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys plasma-manager k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys k9s-catppuccin;};
       home-manager.sharedModules = [
+        nixvim.homeModules.nixvim
+        plasma-manager.homeModules.plasma-manager
       ];
     };
   in {

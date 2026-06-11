@@ -3,15 +3,10 @@
   nixpkgs-stable,
   system,
   ...
-}: let
-  stablePkgs = import nixpkgs-stable {
-    inherit system;
-    config.allowUnfree = true;
-  };
-in {
+}: {
   home.packages = with pkgs; [
-    # gyroflow (from nixos-stable because it's broken on unstable)
-    stablePkgs.gyroflow
+    # gyroflow
     kdePackages.kdenlive
+    # davinci-resolve # start using when v21 lands in unstable
   ];
 }

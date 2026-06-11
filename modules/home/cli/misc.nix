@@ -3,14 +3,12 @@
   nixpkgs-stable,
   system,
   ...
-}: let
-  stablePkgs = import nixpkgs-stable {inherit system;};
-in {
+}: {
   home.packages = with pkgs; [
     gnumake
     gnupg
     sops
-    silver-searcher
+    ripgrep # also required for telescope live_grep in Neovim
     bind
     pre-commit
     yubikey-manager
@@ -30,8 +28,7 @@ in {
     ipcalc
     wget
     ncspot
-    # azure-cli (from nixos-stable because it's broken on unstable)
-    stablePkgs.azure-cli
+    azure-cli
     github-copilot-cli
     apacheKafka
     envsubst

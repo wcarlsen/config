@@ -3,6 +3,8 @@
     awscli2
     ec2-instance-selector
     ssm-session-manager-plugin
+    steampipe
+    # steampipePackages.steampipe-plugin-aws
   ];
 
   # Easy assume roles

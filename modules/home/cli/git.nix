@@ -33,6 +33,7 @@
     gh.enable = true;
     gh.extensions = with pkgs; [
       github-copilot-cli
+      gh-stack
     ];
     gh-dash.enable = true;
   };

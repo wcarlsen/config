@@ -4,6 +4,7 @@
     dbeaver-bin
     discord
     github-desktop
+    handy
     insomnia
     mpv
     slack

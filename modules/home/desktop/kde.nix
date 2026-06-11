@@ -1,12 +1,4 @@
-{
-  pkgs,
-  plasma-manager,
-  ...
-}: {
-  imports = [
-    (plasma-manager + "/modules")
-  ];
-
+{pkgs, ...}: {
   home.packages = with pkgs; [
     banana-cursor
   ];
@@ -22,6 +14,12 @@
       cursor.theme = "Banana";
       cursor.size = 40;
       colorScheme = "BreezeDark";
+    };
+    fonts = {
+      general = {
+        family = "FantasqueSansM Nerd Font";
+        pointSize = 12;
+      };
     };
     kwin = {
       nightLight = {

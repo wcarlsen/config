@@ -32,6 +32,8 @@
     k = "kubectl";
     kx = "kubie ctx";
     kb = "kubie ns";
+    k9s = "k9s --readonly";
+    k9spriv = "k9s --readonly=false";
   };
 
   # Kubie
@@ -58,6 +60,7 @@
   programs.k9s = {
     enable = true;
     settings = {
+      refreshRate = 10;
       k9s.ui.skin = "catppuccin-mocha";
     };
   };

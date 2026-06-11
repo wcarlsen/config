@@ -28,9 +28,10 @@
       editor = {
         renderWhitespace = "boundary";
         wordWrap = "on";
-        fontFamily = "'Maple Mono'";
+        fontFamily = "'FantasqueSansM Nerd Font'";
         fontSize = 18;
         fontLigatures = true;
+        cursorSmoothCaretAnimation = "on";
       };
       terminal.integrated = {
         fontFamily = "'FantasqueSansMono Nerd Font Mono'";
