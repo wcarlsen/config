@@ -8,6 +8,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    VISUAL_EDITOR = "neovide";
+    VISUAL_EDITOR = "code";
   };
 }

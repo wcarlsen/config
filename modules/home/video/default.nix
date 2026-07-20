@@ -1,7 +1,5 @@
 {
   pkgs,
-  nixpkgs-stable,
-  system,
   ...
 }: {
   home.packages = with pkgs; [

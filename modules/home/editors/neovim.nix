@@ -6,10 +6,7 @@
   programs = {
     nixvim = {
       enable = true;
-      colorschemes.catppuccin = {
-        enable = true;
-        flavour = "mocha";
-      };
+      colorschemes.catppuccin.enable = true;
       globals = {
         mapleader = " ";
         maplocalleader = " ";
@@ -32,7 +29,7 @@
         bufferline.enable = true;
         indent-blankline.enable = true;
         treesitter.enable = true;
-        comment-nvim.enable = true;
+        comment.enable = true;
         nvim-autopairs.enable = true;
 
         # Browsing

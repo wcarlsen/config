@@ -1,6 +1,7 @@
 {
   pkgs,
   k9s-catppuccin,
+  k9s,
   ...
 }: {
   home.packages = with pkgs; [
@@ -64,6 +65,7 @@
       k9s.ui.skin = "catppuccin-mocha";
     };
   };
-
   xdg.configFile."k9s/skins/catppuccin-mocha.yaml".source = "${k9s-catppuccin}/dist/catppuccin-mocha.yaml";
+  xdg.configFile."k9s/plugins/flux.yaml".source = "${k9s}/plugins/flux.yaml";
+  xdg.configFile."k9s/plugins/external-secrets.yaml".source = "${k9s}/plugins/external-secrets.yaml";
 }

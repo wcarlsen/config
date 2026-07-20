@@ -28,6 +28,14 @@
     # Catppuccin for k9s
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
+
+    # K9s
+    k9s.url = "github:derailed/k9s";
+    k9s.flake = false;
+
+    # Hunk
+    hunk.url = "github:modem-dev/hunk";
+    hunk.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = {
@@ -40,6 +48,8 @@
     ssh-keys,
     nixvim,
     k9s-catppuccin,
+    k9s,
+    hunk,
     ...
   }: let
     username = "wcarlsen";
@@ -55,10 +65,22 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users."${username}" = import ./home.nix;
-      home-manager.extraSpecialArgs = {inherit pkgs nixpkgs-stable nixpkgs-master system username ssh-keys k9s-catppuccin;};
+      home-manager.extraSpecialArgs = {
+        inherit
+          pkgs
+          nixpkgs-stable
+          nixpkgs-master
+          system
+          username
+          ssh-keys
+          k9s-catppuccin
+          k9s
+          ;
+      };
       home-manager.sharedModules = [
         nixvim.homeModules.nixvim
         plasma-manager.homeModules.plasma-manager
+        hunk.homeManagerModules.default
       ];
     };
   in {

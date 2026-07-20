@@ -1,36 +1,35 @@
 {
   pkgs,
-  nixpkgs-stable,
-  system,
   ...
 }: {
   home.packages = with pkgs; [
+    apacheKafka
+    azure-cli
+    bat
+    bind
+    borgbackup
+    envsubst
+    fd
+    fzf
+    github-copilot-cli
+    gitleaks
     gnumake
     gnupg
-    sops
-    ripgrep # also required for telescope live_grep in Neovim
-    bind
+    hey
+    htop
+    ipcalc
+    jq
+    ncspot
     pre-commit
+    ripgrep # also required for telescope live_grep in Neovim
+    sops
+    tig
+    tldr
+    tree
+    tuxedo
+    wget
+    xsel
     yubikey-manager
     yubikey-personalization
-    gitleaks
-    fzf
-    fd
-    xsel
-    htop
-    tree
-    bat
-    tldr
-    tig
-    borgbackup
-    hey
-    jq
-    ipcalc
-    wget
-    ncspot
-    azure-cli
-    github-copilot-cli
-    apacheKafka
-    envsubst
   ];
 }

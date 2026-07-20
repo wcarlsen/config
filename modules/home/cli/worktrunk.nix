@@ -1,17 +1,14 @@
 {
   lib,
-  nixpkgs-master,
-  system,
+  pkgs,
   ...
-}: let
-  masterPkgs = import nixpkgs-master {inherit system;};
-in {
-  home.packages = with masterPkgs; [
+}: {
+  home.packages = with pkgs; [
     worktrunk
   ];
 
   programs.zsh.initContent = lib.mkOrder 2000 ''
-    eval "$(${masterPkgs.worktrunk}/bin/wt config shell init zsh)"
+    eval "$(${pkgs.worktrunk}/bin/wt config shell init zsh)"
   '';
 
   xdg.configFile."worktrunk/config.toml".text = ''

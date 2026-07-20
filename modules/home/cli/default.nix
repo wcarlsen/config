@@ -1,21 +1,22 @@
 {
   imports = [
+    ./atuin.nix
     ./aws.nix
     ./bat.nix
+    ./carapace.nix
     ./direnv.nix
     ./eza.nix
+    ./gcp.nix
     ./git.nix
+    ./hunk.nix
+    ./jujutsu.nix
     ./kubernetes.nix
-    ./atuin.nix
     ./misc.nix
-    # ./tmux.nix
+    ./pay-respects.nix
+    ./pi.nix
+    ./television.nix
+    ./worktrunk.nix
     ./zellij.nix
     ./zoxide.nix
-    ./gcp.nix
-    ./pay-respects.nix
-    ./carapace.nix
-    ./worktrunk.nix
-    ./television.nix
-    ./jujutsu.nix
   ];
 }
