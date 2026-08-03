@@ -3,11 +3,10 @@
     ./mcp.nix
     ./helix.nix
     ./vscode.nix
-    ./neovim.nix
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
     VISUAL_EDITOR = "code";
   };
 }

@@ -3,7 +3,6 @@
     terraform-ls
     tflint
     terraform-docs
-    # tfswitch
     terraform
     opentofu
     terragrunt

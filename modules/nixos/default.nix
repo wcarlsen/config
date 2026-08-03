@@ -11,5 +11,6 @@
     ./firmware
     ./security
     ./1password
+    ./services
   ];
 }

@@ -8,7 +8,6 @@
     ./eza.nix
     ./gcp.nix
     ./git.nix
-    ./hunk.nix
     ./jujutsu.nix
     ./kubernetes.nix
     ./misc.nix

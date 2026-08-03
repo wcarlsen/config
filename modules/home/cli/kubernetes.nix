@@ -3,9 +3,18 @@
   k9s-catppuccin,
   k9s,
   ...
-}: {
+}: let
+  minikubeWithPatch = pkgs.minikube.overrideAttrs (
+    finalAttrs: previousAttrs: {
+      postInstall =
+        (previousAttrs.postInstall or "")
+        + ''
+          rm -f "$out/bin/kubectl"
+        '';
+    }
+  ); # minikube conflicts with kubectl
+in {
   home.packages = with pkgs; [
-    kubectl
     (wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
         helm-diff
@@ -13,7 +22,8 @@
       ];
     })
     kustomize
-    minikube
+    minikubeWithPatch
+    kubectl
     fluxcd
     kubent
     kubie
