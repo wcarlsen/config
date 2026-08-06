@@ -33,6 +33,7 @@ in {
     kubeconform
     velero
     kor
+    kyverno
   ];
 
   # Zsh plugin
