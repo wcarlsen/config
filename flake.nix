@@ -107,7 +107,6 @@
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
-          nixos-hardware.nixosModules.lenovo-thinkpad-t14s-intel
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];
