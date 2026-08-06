@@ -98,6 +98,20 @@
           homeManagerConf
         ];
       };
+      nixos-t14 = nixpkgs-unstable.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit username ssh-keys;
+          hostname = "nixos-t14";
+        };
+        modules = [
+          ./configuration.nix
+          nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.lenovo-thinkpad-t14s-intel
+          home-manager.nixosModules.home-manager
+          homeManagerConf
+        ];
+      };
       nixos-p15s = nixpkgs-unstable.lib.nixosSystem {
         inherit system;
         specialArgs = {
