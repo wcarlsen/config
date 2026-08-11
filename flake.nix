@@ -107,6 +107,7 @@
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.common-cpu-intel-alder-lake
           home-manager.nixosModules.home-manager
           homeManagerConf
         ];
