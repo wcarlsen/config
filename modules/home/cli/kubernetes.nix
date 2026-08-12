@@ -34,6 +34,7 @@ in {
     velero
     kor
     kyverno
+    clusterctl
   ];
 
   # Zsh plugin

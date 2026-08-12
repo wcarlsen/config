@@ -1,7 +1,7 @@
 {
   imports = [
     ./atuin.nix
-    ./aws.nix
+    ./aws
     ./bat.nix
     ./carapace.nix
     ./direnv.nix

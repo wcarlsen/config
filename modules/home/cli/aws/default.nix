@@ -5,6 +5,8 @@
     ssm-session-manager-plugin
     steampipe
     # steampipePackages.steampipe-plugin-aws
+    eksctl
+    (callPackage ./clusterawsadm.nix {})
   ];
 
   # Easy assume roles
