@@ -4,6 +4,7 @@
   fetchFromGitHub,
   versionCheckHook,
   nix-update-script,
+  installShellFiles,
   ...
 }:
 buildGoModule (finalAttrs: {
@@ -19,12 +20,21 @@ buildGoModule (finalAttrs: {
 
   vendorHash = "sha256-rJ9Le4v4Q4Z6yBYfcVUZl3OqIeIkR/9pjzvp/jyAIF8=";
 
+  subPackages = ["cmd/clusterawsadm"];
+
+  nativeBuildInputs = [installShellFiles];
+
   ldflags = [
     "-s -w"
+    "-X 'sigs.k8s.io/cluster-api-provider-aws/v2/version.gitMajor=${lib.versions.major finalAttrs.version}'"
+    "-X 'sigs.k8s.io/cluster-api-provider-aws/v2/version.gitMinor=${lib.versions.minor finalAttrs.version}'"
     "-X 'sigs.k8s.io/cluster-api-provider-aws/v2/version.gitVersion=${finalAttrs.version}'"
   ];
 
-  subPackages = ["cmd/clusterawsadm"];
+  postInstall = ''
+    installShellCompletion --cmd clusterawsadm \
+      --zsh <($out/bin/clusterawsadm completion zsh)
+  '';
 
   doInstallCheck = true;
   nativeInstallCheckInputs = [
@@ -33,7 +43,7 @@ buildGoModule (finalAttrs: {
   versionCheckProgramArg = "version";
 
   meta = {
-    description = "CLI tool for managing AWS clusters with Cluster API";
+    description = "Provides helpers for bootstrapping Kubernetes Cluster API Provider AWS";
     license = lib.licenses.asl20;
     homepage = "https://github.com/kubernetes-sigs/cluster-api-provider-aws";
     changelog = "https://github.com/kubernetes-sigs/cluster-api-provider-aws/releases/tag/v${finalAttrs.version}";
