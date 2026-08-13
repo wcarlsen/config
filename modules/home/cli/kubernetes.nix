@@ -25,6 +25,7 @@ in {
     minikubeWithPatch
     kubectl
     fluxcd
+    fluxcd-operator
     kubent
     kubie
     cmctl
