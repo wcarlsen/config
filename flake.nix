@@ -21,10 +21,6 @@
     ssh-keys.url = "https://github.com/wcarlsen.keys";
     ssh-keys.flake = false;
 
-    # NixVim
-    # nixvim.url = "github:nix-community/nixvim";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
     # Catppuccin for k9s
     k9s-catppuccin.url = "github:catppuccin/k9s";
     k9s-catppuccin.flake = false;
@@ -32,10 +28,6 @@
     # K9s
     k9s.url = "github:derailed/k9s";
     k9s.flake = false;
-
-    # Hunk
-    # hunk.url = "github:modem-dev/hunk";
-    # hunk.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = {
@@ -46,10 +38,8 @@
     home-manager,
     plasma-manager,
     ssh-keys,
-    # nixvim,
     k9s-catppuccin,
     k9s,
-    # hunk,
     ...
   }: let
     username = "wcarlsen";
@@ -57,7 +47,7 @@
     pkgs = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      # config.permittedInsecurePackages = [];
+      config.permittedInsecurePackages = [];
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
@@ -76,9 +66,7 @@
           ;
       };
       home-manager.sharedModules = [
-        # nixvim.homeModules.nixvim
         plasma-manager.homeModules.plasma-manager
-        # hunk.homeManagerModules.default.${system}
       ];
     };
   in {
