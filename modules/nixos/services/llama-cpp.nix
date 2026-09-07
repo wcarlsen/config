@@ -1,5 +1,5 @@
 {
-  programs.television = {
+  services.llama-cpp = {
     enable = true;
   };
 }

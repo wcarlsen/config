@@ -13,7 +13,6 @@
     ./misc.nix
     ./pay-respects.nix
     ./pi.nix
-    ./television.nix
     ./worktrunk.nix
     ./zellij.nix
     ./zoxide.nix
