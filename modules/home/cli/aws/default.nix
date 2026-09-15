@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     awscli2
+    aws-iam-authenticator
     ec2-instance-selector
     ssm-session-manager-plugin
     steampipe

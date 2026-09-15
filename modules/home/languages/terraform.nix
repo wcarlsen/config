@@ -7,6 +7,7 @@
     opentofu
     terragrunt
     hcledit
+    tfctl
   ];
 
   # Zsh plugin

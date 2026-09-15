@@ -36,6 +36,7 @@ in {
     kor
     kyverno
     clusterctl
+    # sofka
   ];
 
   # Zsh plugin
