@@ -6,7 +6,7 @@
     ./hardware
     ./system
     ./users
-    ./security
+    # ./security
     ./gaming
     ./firmware
     ./security

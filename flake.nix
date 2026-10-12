@@ -28,6 +28,8 @@
     # K9s
     k9s.url = "github:derailed/k9s";
     k9s.flake = false;
+
+    sofka.url = "github:nklmilojevic/sofka";
   };
 
   outputs = {
@@ -40,6 +42,7 @@
     ssh-keys,
     k9s-catppuccin,
     k9s,
+    sofka,
     ...
   }: let
     username = "wcarlsen";
@@ -67,6 +70,7 @@
       };
       home-manager.sharedModules = [
         plasma-manager.homeModules.plasma-manager
+        sofka.homeManagerModules.sofka
       ];
     };
   in {

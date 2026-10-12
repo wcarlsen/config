@@ -49,6 +49,8 @@ in {
     kb = "kubie ns";
     k9s = "k9s --readonly";
     k9spriv = "k9s --readonly=false";
+    sofka = "sofka --readonly";
+    sofkapriv = "sofka --write";
   };
 
   # Kubie
@@ -82,4 +84,10 @@ in {
   xdg.configFile."k9s/skins/catppuccin-mocha.yaml".source = "${k9s-catppuccin}/dist/catppuccin-mocha.yaml";
   xdg.configFile."k9s/plugins/flux.yaml".source = "${k9s}/plugins/flux.yaml";
   xdg.configFile."k9s/plugins/external-secrets.yaml".source = "${k9s}/plugins/external-secrets.yaml";
+
+  # Sofkas
+  programs.sofka = {
+    enable = true;
+    skin = {name = "catppuccin-mocha";};
+  };
 }

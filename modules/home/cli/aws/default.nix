@@ -8,6 +8,7 @@
     # steampipePackages.steampipe-plugin-aws
     eksctl
     (callPackage ./clusterawsadm.nix {})
+    (callPackage ./go-aws-sso.nix {})
   ];
 
   # Easy assume roles
