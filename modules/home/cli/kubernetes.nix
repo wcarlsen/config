@@ -1,9 +1,4 @@
-{
-  pkgs,
-  k9s-catppuccin,
-  k9s,
-  ...
-}: let
+{pkgs, ...}: let
   minikubeWithPatch = pkgs.minikube.overrideAttrs (
     finalAttrs: previousAttrs: {
       postInstall =
@@ -47,9 +42,6 @@ in {
     k = "kubectl";
     kx = "kubie ctx";
     kb = "kubie ns";
-    k9s = "k9s --readonly";
-    k9spriv = "k9s --readonly=false";
-    sofka = "sofka --readonly";
     sofkapriv = "sofka --write";
   };
 
@@ -73,21 +65,12 @@ in {
     }
   '';
 
-  # K9s
-  programs.k9s = {
-    enable = true;
-    settings = {
-      refreshRate = 10;
-      k9s.ui.skin = "catppuccin-mocha";
-    };
-  };
-  xdg.configFile."k9s/skins/catppuccin-mocha.yaml".source = "${k9s-catppuccin}/dist/catppuccin-mocha.yaml";
-  xdg.configFile."k9s/plugins/flux.yaml".source = "${k9s}/plugins/flux.yaml";
-  xdg.configFile."k9s/plugins/external-secrets.yaml".source = "${k9s}/plugins/external-secrets.yaml";
-
   # Sofkas
   programs.sofka = {
     enable = true;
     skin = {name = "catppuccin-mocha";};
+    settings = {
+      readonly = true;
+    };
   };
 }

@@ -21,14 +21,7 @@
     ssh-keys.url = "https://github.com/wcarlsen.keys";
     ssh-keys.flake = false;
 
-    # Catppuccin for k9s
-    k9s-catppuccin.url = "github:catppuccin/k9s";
-    k9s-catppuccin.flake = false;
-
-    # K9s
-    k9s.url = "github:derailed/k9s";
-    k9s.flake = false;
-
+    # Sofka
     sofka.url = "github:nklmilojevic/sofka";
   };
 
@@ -40,8 +33,6 @@
     home-manager,
     plasma-manager,
     ssh-keys,
-    k9s-catppuccin,
-    k9s,
     sofka,
     ...
   }: let
@@ -64,8 +55,6 @@
           system
           username
           ssh-keys
-          k9s-catppuccin
-          k9s
           ;
       };
       home-manager.sharedModules = [
