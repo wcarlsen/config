@@ -1,10 +1,7 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     apacheKafka
-    azure-cli
+    # azure-cli
     bat
     bind
     borgbackup

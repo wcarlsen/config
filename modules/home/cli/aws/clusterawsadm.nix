@@ -9,13 +9,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "clusterawsadm";
-  version = "2.13.0";
+  version = "2.13.1";
 
   src = fetchFromGitHub {
     owner = "kubernetes-sigs";
     repo = "cluster-api-provider-aws";
     tag = "v${finalAttrs.version}";
-    sha256 = "sha256-tPVYFKVZ5zyCJWOx8XSULSog61tkfi1Hbvg8Ry1dtEo=";
+    sha256 = "sha256-ayj8ZSAVOaLu6F43S8enPdHL08ad/fEtBlJHzipzuQc=";
   };
 
   vendorHash = "sha256-rJ9Le4v4Q4Z6yBYfcVUZl3OqIeIkR/9pjzvp/jyAIF8=";

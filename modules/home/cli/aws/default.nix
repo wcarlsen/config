@@ -9,6 +9,7 @@
     eksctl
     (callPackage ./clusterawsadm.nix {})
     (callPackage ./go-aws-sso.nix {})
+    python314Packages.cfn-lint
   ];
 
   # Easy assume roles

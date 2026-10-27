@@ -48,6 +48,11 @@
       projectManager.git.baseFolders = [
         "~/spaghetti"
       ];
+      github.copilot.enable = {
+        "*" = false;
+        "plaintext" = false;
+        "markdown" = false;
+      };
     };
   };
 }

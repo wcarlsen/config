@@ -43,6 +43,8 @@ in {
     kx = "kubie ctx";
     kb = "kubie ns";
     sofkapriv = "sofka --write";
+    k9s = "sofka";
+    k9spriv = "sofkapriv";
   };
 
   # Kubie

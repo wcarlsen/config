@@ -16,5 +16,6 @@
     ./worktrunk.nix
     ./zellij.nix
     ./zoxide.nix
+    ./flate
   ];
 }
