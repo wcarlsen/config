@@ -11,6 +11,7 @@
     ./jujutsu.nix
     ./kubernetes.nix
     ./misc.nix
+    ./mise.nix
     ./pay-respects.nix
     ./pi.nix
     ./worktrunk.nix
