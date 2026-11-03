@@ -1,0 +1,14 @@
+{
+  programs.herdr = {
+    enable = true;
+    settings = {
+      onboarding = false;
+      theme = {
+        name = "catppuccin";
+        auto_switch = true;
+        light_name = "catppuccin-latte";
+        dark_name = "catppuccin";
+      };
+    };
+  };
+}

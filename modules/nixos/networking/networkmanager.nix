@@ -10,4 +10,6 @@
   users.users."${username}" = {
     extraGroups = ["networkmanager"];
   };
+
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

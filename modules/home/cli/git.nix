@@ -34,8 +34,12 @@
     gh.extensions = with pkgs; [
       github-copilot-cli
       gh-stack
+      gh-aw
     ];
-    gh-dash.enable = true;
+    gh-dash = {
+      enable = true;
+      settings = {};
+    };
   };
 
   # Zsh plugins

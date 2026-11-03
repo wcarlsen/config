@@ -23,6 +23,10 @@
 
     # Sofka
     sofka.url = "github:nklmilojevic/sofka";
+
+    # Ghostty
+    ghostty-cursor-shaders.url = "github:sahaj-b/ghostty-cursor-shaders";
+    ghostty-cursor-shaders.flake = false;
   };
 
   outputs = {
@@ -34,6 +38,7 @@
     plasma-manager,
     ssh-keys,
     sofka,
+    ghostty-cursor-shaders,
     ...
   }: let
     username = "wcarlsen";
@@ -42,6 +47,7 @@
       inherit system;
       config.allowUnfree = true;
       config.permittedInsecurePackages = [];
+      config.problems.handlers."gtk+".broken = "warn";
     };
     homeManagerConf = {
       home-manager.useGlobalPkgs = true;
@@ -55,6 +61,7 @@
           system
           username
           ssh-keys
+          ghostty-cursor-shaders
           ;
       };
       home-manager.sharedModules = [
