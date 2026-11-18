@@ -22,7 +22,7 @@
     ssh-keys.flake = false;
 
     # Sofka
-    sofka.url = "github:nklmilojevic/sofka";
+    sofka.url = "github:nklmilojevic/sofka/v0.34.0";
 
     # Ghostty
     ghostty-cursor-shaders.url = "github:sahaj-b/ghostty-cursor-shaders";

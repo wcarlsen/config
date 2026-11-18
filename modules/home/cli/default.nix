@@ -18,6 +18,5 @@
     ./zellij.nix
     ./zoxide.nix
     ./flate
-    ./herdr.nix
   ];
 }

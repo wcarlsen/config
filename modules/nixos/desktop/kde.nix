@@ -12,6 +12,8 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     kate
     elisa
+    kmail
+    kontact
   ];
 
   # Unlock KWallet automatically

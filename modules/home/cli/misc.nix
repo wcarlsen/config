@@ -16,7 +16,6 @@
     htop
     ipcalc
     jq
-    ncspot
     pre-commit
     ripgrep # also required for telescope live_grep in Neovim
     sops
